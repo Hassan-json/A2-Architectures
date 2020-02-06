@@ -55,12 +55,39 @@ Content-Type: application/json
 
 {"message": "Hello!"}
 ```
-### What is the difference between RPC and Rest? ###
+
 ### How many cores does the Stackoverflow Servers have, with what chip Hz and how many MB L2 cache? ### 
+
+SQL Servers (Stack Overflow Cluster)
+- 2 Dell R720xd Servers, each with:
+- Dual E5-2697v2 Processors (12 cores @2.7–3.5GHz each)
+- 384 GB of RAM (24x 16 GB DIMMs)
+- 1x Intel P3608 4 TB NVMe PCIe SSD (RAID 0, 2 controllers per card)
+- 24x Intel 710 200 GB SATA SSDs (RAID 10)
+- Dual 10 Gbps network (Intel X540/I350 NDC)
+
+SQL Servers (Stack Exchange “…and everything else” Cluster)
+- 2 Dell R730xd Servers, each with:
+- Dual E5-2667v3 Processors (8 cores @3.2–3.6GHz each)
+- 768 GB of RAM (24x 32 GB DIMMs)
+- 3x Intel P3700 2 TB NVMe PCIe SSD (RAID 0)
+- 24x 10K Spinny 1.2 TB SATA HDDs (RAID 10)
+- Dual 10 Gbps network (Intel X540/I350 NDC)
+
+Redis Servers (Cache)
+- 2 Dell R630 Servers, each with:
+- Dual E5-2687W v3 Processors (10 cores @3.1–3.5GHz each)
+- 256 GB of RAM (16x 16 GB DIMMs)
+- 2x Intel 520 240GB SATA SSDs (RAID 1)
+- Dual 10 Gbps network (Intel X540/I350 NDC)
+
+
+Detailed post, actually the source 
+[StackOver Flow Hardware](https://nickcraver.com/blog/2016/03/29/stack-overflow-the-hardware-2016-edition/)
 
 ### GPU and TPU ###
 Architecturally? Very different. A GPU is a processor in its own right, just one optimised for vectorised numerical code; GPUs are the spiritual successor of the classic Cray supercomputers. A TPU is a coprocessor, it cannot execute code in its own right, all code execution takes place on the CPU which just feeds a stream of microoperations to the TPUHello World with Google Colab using Python language running on GPU. 
 
-You can write your code with Google Colab will run on GPU / TPU, take a look. 
+You can write your code with Google Colab and run on GPU / TPU, take a look. 
 
 ![Hello World](https://raw.githubusercontent.com/Hassan-json/A2-Architectures/master/images/Capture.PNG)
